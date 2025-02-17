@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import { describe, it } from 'node:test'
-import { shadowToObjects } from './shadowToObjects.js'
 import { LwM2MObjectID } from '../LwM2MObjectID.js'
+import { shadowToObjects } from './shadowToObjects.js'
 
 void describe('shadowToObjects()', () => {
 	void it('should convert a shadow to LwM2M objects', () =>
@@ -44,7 +44,7 @@ void describe('shadowToObjects()', () => {
 				'14401:1.0': {
 					0: {
 						0: ['BOOT', 'MODEM', 'APP'],
-						99: 1717409966 * 1000,
+						99: 1717409966,
 					},
 				},
 			}),
@@ -99,7 +99,7 @@ void describe('shadowToObjects()', () => {
 					ObjectVersion: '1.0',
 					Resources: {
 						0: ['BOOT', 'MODEM', 'APP'],
-						99: 1717409966 * 1000,
+						99: 1717409966,
 					},
 				},
 			],
