@@ -3,7 +3,7 @@ import {
 	TimeUnit,
 	type _Record,
 } from '@aws-sdk/client-timestream-write'
-import { instanceTsAsDate } from '../instanceTs.js'
+import { instanceTs } from '../instanceTs.js'
 import type { LwM2MObjectInstance } from '../LwM2MObjectInstance.js'
 import { instanceToMeasures } from './instanceToMeasures.js'
 import { NoHistoryMeasuresError } from './NoHistoryMeasuresError.js'
@@ -29,12 +29,12 @@ export const instanceMeasuresToRecord = ({
 				`No measure to be stored in history for object ${ObjectID}!`,
 			),
 		}
-	const instanceTs = instanceTsAsDate({
+	const instanceTime = instanceTs({
 		ObjectID,
 		ObjectInstanceID,
 		Resources,
 	})
-	if (instanceTs === undefined)
+	if (instanceTime === undefined)
 		return { error: new Error(`No timestamp found for ${ObjectID}!`) }
 	return {
 		record: {
@@ -55,8 +55,8 @@ export const instanceMeasuresToRecord = ({
 			MeasureName: `${ObjectID}/${ObjectInstanceID ?? 0}`,
 			MeasureValues: maybeMeasures.measures,
 			MeasureValueType: MeasureValueType.MULTI,
-			Time: instanceTs.getTime().toString(),
-			TimeUnit: TimeUnit.MILLISECONDS,
+			Time: instanceTime.toString(),
+			TimeUnit: TimeUnit.SECONDS,
 		},
 	}
 }

@@ -46,8 +46,8 @@ void describe('instanceMeasuresToRecord()', () => {
 					Value: '45',
 				},
 			],
-			Time: '1717419305000',
-			TimeUnit: 'MILLISECONDS',
+			Time: '1717419305',
+			TimeUnit: 'SECONDS',
 		})
 	})
 })
