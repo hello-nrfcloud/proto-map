@@ -1,6 +1,6 @@
-import xml2js from 'xml2js'
 import { readFile } from 'node:fs/promises'
 import path from 'node:path'
+import xml2js from 'xml2js'
 import type { LwM2MType } from './resourceType.js'
 
 /**

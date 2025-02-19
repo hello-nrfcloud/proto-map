@@ -1,5 +1,5 @@
-import type { LwM2MResourceValue } from './LwM2MObjectInstance.js'
 import type { LwM2MObjectID } from './LwM2MObjectID.js'
+import type { LwM2MResourceValue } from './LwM2MObjectInstance.js'
 
 export type LwM2MObject<
 	ObjectDef extends {

@@ -1,4 +1,4 @@
-import type { RootContent, Heading, Paragraph } from 'mdast'
+import type { Heading, Paragraph, RootContent } from 'mdast'
 import { remark } from 'remark'
 
 export const parseMarkdown2 = remark()

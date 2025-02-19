@@ -1,6 +1,6 @@
 import type { LwM2MObjectInstance } from '../LwM2MObjectInstance.js'
-import type { LwM2MShadow } from './objectsToShadow.js'
 import { timestampResources } from '../timestampResources.js'
+import type { LwM2MShadow } from './objectsToShadow.js'
 
 export const shadowToObjects = (shadow: LwM2MShadow): LwM2MObjectInstance[] =>
 	Object.entries(shadow)

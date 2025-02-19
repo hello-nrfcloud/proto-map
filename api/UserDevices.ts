@@ -1,8 +1,8 @@
 import { Type } from '@sinclair/typebox'
 import { Context } from './Context.js'
 import { DeviceId, PublicDeviceId } from './DeviceId.js'
-import { IsoDateType } from './IsoDateType.js'
 import { Model } from './Devices.js'
+import { IsoDateType } from './IsoDateType.js'
 
 export const UserDevices = Type.Object({
 	'@context': Type.Literal(Context.userDevices.toString()),

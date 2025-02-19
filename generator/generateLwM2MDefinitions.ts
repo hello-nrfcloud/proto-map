@@ -1,12 +1,12 @@
 import ts, { type ObjectLiteralElementLike } from 'typescript'
-import { addDocBlock } from './addDocBlock.js'
+import type { Range } from '../lwm2m/LWM2MObjectInfo.js'
 import type {
 	ParsedLwM2MObjectDefinition,
 	Resource,
 } from '../lwm2m/ParsedLwM2MObjectDefinition.js'
-import { generateName } from './generateType.js'
 import { parseRangeEnumeration } from '../lwm2m/parseRangeEnumeration.js'
-import type { Range } from '../lwm2m/LWM2MObjectInfo.js'
+import { addDocBlock } from './addDocBlock.js'
+import { generateName } from './generateType.js'
 
 export const generateLwM2MDefinitions = (
 	definitions: ParsedLwM2MObjectDefinition[],

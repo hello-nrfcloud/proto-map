@@ -1,4 +1,5 @@
 import { Type } from '@sinclair/typebox'
+import { models } from '../models/models.js'
 import { Context } from './Context.js'
 import { DeviceId, PublicDeviceId } from './DeviceId.js'
 import {
@@ -7,7 +8,6 @@ import {
 	ObjectVersion,
 	Resources,
 } from './LwM2M.js'
-import { models } from '../models/models.js'
 
 export const LwM2MObjectInstance = Type.Object({
 	ObjectID,

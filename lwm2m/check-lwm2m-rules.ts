@@ -1,17 +1,17 @@
 import chalk from 'chalk'
+import assert from 'node:assert/strict'
+import { exec } from 'node:child_process'
 import { readFile, readdir, stat } from 'node:fs/promises'
 import path, { parse } from 'node:path'
-import assert from 'node:assert/strict'
 import xml2js from 'xml2js'
-import { exec } from 'node:child_process'
-import { unwrapNestedArray } from './unwrapNestedArray.js'
+import { validate } from '../validate.js'
 import {
 	LWM2MObjectDefinition,
 	type LWM2MObjectDefinitionType,
 } from './LWM2MObjectDefinition.js'
 import type { ParsedLwM2MObjectDefinition } from './ParsedLwM2MObjectDefinition.js'
-import { validate } from '../validate.js'
 import { parseRangeEnumeration } from './parseRangeEnumeration.js'
+import { unwrapNestedArray } from './unwrapNestedArray.js'
 
 const v = validate(LWM2MObjectDefinition)
 

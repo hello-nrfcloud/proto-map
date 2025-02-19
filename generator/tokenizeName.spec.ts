@@ -1,6 +1,6 @@
-import { tokenizeName } from './tokenizeName.js'
-import { describe, it } from 'node:test'
 import assert from 'node:assert/strict'
+import { describe, it } from 'node:test'
+import { tokenizeName } from './tokenizeName.js'
 
 void describe('tokenizeName', () => {
 	for (const [name, expected] of [

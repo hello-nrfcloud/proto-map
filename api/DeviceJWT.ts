@@ -1,7 +1,7 @@
 import { Type } from '@sinclair/typebox'
+import { Context } from './Context.js'
 import { DeviceId, PublicDeviceId } from './DeviceId.js'
 import { Model } from './Devices.js'
-import { Context } from './Context.js'
 
 export const DeviceJWTPayload = Type.Object(
 	{

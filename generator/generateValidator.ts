@@ -3,8 +3,8 @@ import type {
 	ParsedLwM2MObjectDefinition,
 	Resource,
 } from '../lwm2m/ParsedLwM2MObjectDefinition.js'
-import { generateName } from './generateType.js'
 import { addDocBlock } from './addDocBlock.js'
+import { generateName } from './generateType.js'
 
 export const generateValidator = ({
 	ObjectID,

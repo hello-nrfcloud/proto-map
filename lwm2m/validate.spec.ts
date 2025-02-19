@@ -1,7 +1,7 @@
+import assert from 'node:assert'
 import { describe, it } from 'node:test'
 import { validate } from './validate.js'
 import { validators } from './validators.js'
-import assert from 'node:assert'
 
 void describe('validate()', () => {
 	const v = validate(validators)

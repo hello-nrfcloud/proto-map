@@ -1,14 +1,14 @@
 import chalk from 'chalk'
 import { readFile, readdir, writeFile } from 'node:fs/promises'
+import os from 'node:os'
 import path from 'node:path'
-import { unwrapNestedArray } from '../lwm2m/unwrapNestedArray.js'
 import xml2js from 'xml2js'
 import type { ParsedLwM2MObjectDefinition } from '../lwm2m/ParsedLwM2MObjectDefinition.js'
-import { generateLwm2mTimestampResources } from './generateLwm2mTimestampResources.js'
-import { printNode } from './printNode.js'
-import os from 'node:os'
+import { unwrapNestedArray } from '../lwm2m/unwrapNestedArray.js'
 import { generateLwM2MDefinitions } from './generateLwM2MDefinitions.js'
+import { generateLwm2mTimestampResources } from './generateLwm2mTimestampResources.js'
 import { generateName } from './generateType.js'
+import { printNode } from './printNode.js'
 
 const baseDir = process.cwd()
 const subDir = (...tree: string[]): string => path.join(baseDir, ...tree)

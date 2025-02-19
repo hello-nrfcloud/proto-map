@@ -1,5 +1,5 @@
-import { getHeading, getParagraphsAfterHeading } from './getCodeBlock.js'
 import type { RootContent } from 'mdast'
+import { getHeading, getParagraphsAfterHeading } from './getCodeBlock.js'
 
 export const parseREADME = (
 	markdown: string,

@@ -1,7 +1,7 @@
+import { parseREADME } from 'markdown/parseREADME.js'
 import ts from 'typescript'
 import { addDocBlock } from './addDocBlock.js'
 import { tokenizeName } from './tokenizeName.js'
-import { parseREADME } from 'markdown/parseREADME.js'
 
 export const generateModels = (
 	models: {

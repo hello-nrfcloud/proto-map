@@ -1,12 +1,12 @@
+import { parseRangeEnumeration } from 'lwm2m/parseRangeEnumeration.js'
 import ts from 'typescript'
-import { addDocBlock } from './addDocBlock.js'
 import type {
 	ParsedLwM2MObjectDefinition,
 	Resource,
 } from '../lwm2m/ParsedLwM2MObjectDefinition.js'
 import { LwM2MType } from '../lwm2m/resourceType.js'
+import { addDocBlock } from './addDocBlock.js'
 import { tokenizeName } from './tokenizeName.js'
-import { parseRangeEnumeration } from 'lwm2m/parseRangeEnumeration.js'
 
 export const generateType = ({
 	ObjectID,

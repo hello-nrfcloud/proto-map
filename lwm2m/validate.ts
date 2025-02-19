@@ -1,5 +1,5 @@
-import type { LwM2MObjectInstance } from './LwM2MObjectInstance.js'
 import type { LwM2MObjectID } from './LwM2MObjectID.js'
+import type { LwM2MObjectInstance } from './LwM2MObjectInstance.js'
 import { isLwM2MObject } from './validation.js'
 
 export const validate =

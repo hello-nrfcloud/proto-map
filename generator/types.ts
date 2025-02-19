@@ -1,18 +1,17 @@
 import chalk from 'chalk'
 import { mkdir, readFile, readdir, writeFile } from 'node:fs/promises'
 import path from 'node:path'
-import { unwrapNestedArray } from '../lwm2m/unwrapNestedArray.js'
+import ts from 'typescript'
 import xml2js from 'xml2js'
 import type { ParsedLwM2MObjectDefinition } from '../lwm2m/ParsedLwM2MObjectDefinition.js'
-import ts from 'typescript'
+import { unwrapNestedArray } from '../lwm2m/unwrapNestedArray.js'
 
-import { printNode } from './printNode.js'
 import os from 'node:os'
-import { generateType } from './generateType.js'
 import { addDocBlock } from './addDocBlock.js'
-import { generateName } from './generateType.js'
+import { generateName, generateType } from './generateType.js'
 import { generateValidator } from './generateValidator.js'
 import { generateValidators } from './generateValidators.js'
+import { printNode } from './printNode.js'
 
 const baseDir = process.cwd()
 const subDir = (...tree: string[]): string => path.join(baseDir, ...tree)

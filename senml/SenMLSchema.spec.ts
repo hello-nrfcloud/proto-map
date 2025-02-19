@@ -1,7 +1,7 @@
-import { describe, it } from 'node:test'
-import { SenML, type SenMLType } from './SenMLSchema.js'
 import assert from 'node:assert/strict'
+import { describe, it } from 'node:test'
 import { validate } from '../validate.js'
+import { SenML, type SenMLType } from './SenMLSchema.js'
 
 void describe('SenMLType', () => {
 	void it('it should validate a SenML payload', () => {

@@ -1,7 +1,7 @@
-import type { ParsedLwM2MObjectDefinition } from '../lwm2m/ParsedLwM2MObjectDefinition.js'
 import ts from 'typescript'
-import { generateName } from './generateType.js'
+import type { ParsedLwM2MObjectDefinition } from '../lwm2m/ParsedLwM2MObjectDefinition.js'
 import { addDocBlock } from './addDocBlock.js'
+import { generateName } from './generateType.js'
 
 export const generateValidators = (
 	objects: ParsedLwM2MObjectDefinition[],

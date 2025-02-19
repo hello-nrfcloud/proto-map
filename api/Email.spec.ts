@@ -1,8 +1,8 @@
-import { describe, it } from 'node:test'
 import assert from 'node:assert/strict'
-import invalidEmails from './test/invalid-emails.json' assert { type: 'json' }
-import { Email } from './Email.js'
+import { describe, it } from 'node:test'
 import { validate } from '../validate.js'
+import { Email } from './Email.js'
+import invalidEmails from './test/invalid-emails.json' assert { type: 'json' }
 
 const v = validate(Email)
 

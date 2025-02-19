@@ -1,9 +1,9 @@
 import chalk from 'chalk'
+import { parseREADME } from 'markdown/parseREADME.js'
 import assert from 'node:assert/strict'
 import { readFile, readdir, stat } from 'node:fs/promises'
 import path from 'node:path'
 import { ModelIDRegExp } from './types.js'
-import { parseREADME } from 'markdown/parseREADME.js'
 
 console.log(chalk.gray('Models rules check'))
 console.log('')

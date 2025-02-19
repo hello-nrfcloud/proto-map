@@ -1,5 +1,5 @@
-import { describe, it } from 'node:test'
 import assert from 'node:assert/strict'
+import { describe, it } from 'node:test'
 import { hasValue } from './hasValue.js'
 
 void describe('hasValue() should determine whether an object has a value', () => {
