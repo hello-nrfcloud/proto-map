@@ -1,2 +1,5 @@
+export * from './instanceMeasuresToRecord.js'
+export * from './instanceToMeasures.js'
+export * from './NoHistoryMeasuresError.js'
 export * from './objectsToShadow.js'
 export * from './shadowToObjects.js'
