@@ -1,7 +1,7 @@
-import { LwM2MObjectID } from 'lwm2m/LwM2MObjectID.js'
-import type { Environment_14205 } from 'lwm2m/objects.js'
 import assert from 'node:assert'
 import { describe, it } from 'node:test'
+import { LwM2MObjectID } from '../LwM2MObjectID.js'
+import type { Environment_14205 } from '../objects.js'
 import { instanceMeasuresToRecord } from './instanceMeasuresToRecord.js'
 
 void describe('instanceMeasuresToRecord()', () => {

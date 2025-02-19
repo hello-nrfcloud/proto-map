@@ -3,8 +3,8 @@ import {
 	TimeUnit,
 	type _Record,
 } from '@aws-sdk/client-timestream-write'
-import { instanceTsAsDate } from 'lwm2m/instanceTs.js'
-import type { LwM2MObjectInstance } from 'lwm2m/LwM2MObjectInstance.js'
+import { instanceTsAsDate } from '../instanceTs.js'
+import type { LwM2MObjectInstance } from '../LwM2MObjectInstance.js'
 import { instanceToMeasures } from './instanceToMeasures.js'
 import { NoHistoryMeasuresError } from './NoHistoryMeasuresError.js'
 

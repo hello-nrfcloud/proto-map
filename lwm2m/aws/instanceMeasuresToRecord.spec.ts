@@ -1,7 +1,7 @@
-import { InvalidTimeError } from 'lwm2m/InvalidTimeError.js'
-import { LwM2MObjectID } from 'lwm2m/LwM2MObjectID.js'
 import assert from 'node:assert/strict'
 import { describe, it } from 'node:test'
+import { InvalidTimeError } from '../InvalidTimeError.js'
+import { LwM2MObjectID } from '../LwM2MObjectID.js'
 import { instanceMeasuresToRecord } from './instanceMeasuresToRecord.js'
 import { NoHistoryMeasuresError } from './NoHistoryMeasuresError.js'
 
