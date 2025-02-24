@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LWM2M xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://openmobilealliance.org/tech/profiles/LWM2M-v1_1.xsd">
+  <Object ObjectType="MODefinition">
+    <Name>Connection Quality</Name>
+    <Description1><![CDATA[Information about the connection quality.]]></Description1>
+    <ObjectID>14501</ObjectID>
+    <ObjectURN>urn:oma:lwm2m:x:14501</ObjectURN>
+    <MultipleInstances>Multiple</MultipleInstances>
+    <Mandatory>Optional</Mandatory>
+    <Resources>
+      <Item ID="0">
+        <Name>Latency</Name>
+        <Operations>R</Operations>
+        <MultipleInstances>Single</MultipleInstances>
+        <Mandatory>Optional</Mandatory>
+        <Type>Integer</Type>
+        <RangeEnumeration/>
+        <Units>ms</Units>
+        <Description><![CDATA[The latency in milliseconds. Example: 52, 2708.]]></Description>
+      </Item>
+      <Item ID="1">
+        <Name>Packet loss</Name>
+        <Operations>R</Operations>
+        <MultipleInstances>Single</MultipleInstances>
+        <Mandatory>Optional</Mandatory>
+        <Type>Integer</Type>
+        <RangeEnumeration>0..100</RangeEnumeration>
+        <Units>V</Units>
+        <Description><![CDATA[Packet loss in percent. Examples: 3, 97.]]></Description>
+      </Item>
+      <Item ID="2">
+        <Name>Throughput</Name>
+        <Operations>R</Operations>
+        <MultipleInstances>Single</MultipleInstances>
+        <Mandatory>Optional</Mandatory>
+        <Type>Integer</Type>
+        <RangeEnumeration/>
+        <Units>bytes/s</Units>
+        <Description><![CDATA[The throughput in bytes per second. Example: 11, 275.]]></Description>
+      </Item>
+      <Item ID="99">
+        <Name>Timestamp</Name>
+        <Operations>R</Operations>
+        <MultipleInstances>Single</MultipleInstances>
+        <Mandatory>Mandatory</Mandatory>
+        <Type>Time</Type>
+        <RangeEnumeration/>
+        <Units/>
+        <Description><![CDATA[The timestamp of when the measurement was performed.]]></Description>
+      </Item>
+    </Resources>
+    <Description2/>
+  </Object>
+</LWM2M>
