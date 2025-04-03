@@ -98,7 +98,7 @@
     "lwm2m"
   ],
   "peerDependencies": {
-    "@aws-sdk/client-timestream-write": "^3.777.0",
+    "@aws-sdk/client-timestream-write": "^3.782.0",
     "@sinclair/typebox": "^0.34.33"
   }
 }
