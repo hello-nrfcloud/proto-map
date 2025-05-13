@@ -38,7 +38,7 @@
     "@bifravst/eslint-config-typescript": "6.1.22",
     "@bifravst/prettier-config": "1.1.8",
     "@commitlint/config-conventional": "19.8.1",
-    "@swc/cli": "0.7.5",
+    "@swc/cli": "0.7.7",
     "@swc/core": "1.11.24",
     "@types/node": "22.15.17",
     "@types/xml2js": "0.4.14",
