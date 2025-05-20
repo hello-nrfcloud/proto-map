@@ -40,7 +40,7 @@
     "@commitlint/config-conventional": "19.8.1",
     "@swc/cli": "0.7.7",
     "@swc/core": "1.11.24",
-    "@types/node": "22.15.19",
+    "@types/node": "22.15.20",
     "@types/xml2js": "0.4.14",
     "chalk": "5.4.1",
     "globstar": "1.0.0",
