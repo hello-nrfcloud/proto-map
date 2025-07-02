@@ -17,44 +17,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          submodules: true
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "22.x"
-          cache: "npm"
-
-      - name: Install dependencies
-        run: npm ci --no-audit
-
-      - name: Check LwM2M definitions
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y libxml2-utils
-          npx tsx lwm2m/check-lwm2m-rules.ts
-
-      - name: Generate LwM2M code
-        run: npx tsx generator/lwm2m.ts
-
-      - name: Generate model code
-        run: npx tsx generator/models.ts
-
-      - name: Generate types and validation code
-        run: npx tsx generator/types.ts
-
-      - name: Make sure TypeScript compiles
-        run: npx tsc
-
-      - name: Run tests
-        run: npm test
-
-      - name: Check model data
-        run: npx tsx models/check-model-rules.ts
-
-      - name: Check source code with eslint
-        run: npx eslint ./
+      - name: Tests
+        uses: ./.github/workflows/tests
 
       - name: Semantic release
         run: npx semantic-release

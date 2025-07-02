@@ -1,0 +1,51 @@
+name: Tests
+
+runs:
+  using: "composite"
+
+  steps:
+    - uses: actions/checkout@v4
+
+    - uses: actions/setup-node@v4
+      with:
+        node-version: "22.x"
+        cache: "npm"
+
+    - name: Install dependencies
+      shell: bash
+      run: npm ci --no-audit
+
+    - name: Check LwM2M definitions
+      shell: bash
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y libxml2-utils
+        npx tsx lwm2m/check-lwm2m-rules.ts
+
+    - name: Generate LwM2M code
+      shell: bash
+      run: npx tsx generator/lwm2m.ts
+
+    - name: Generate model code
+      shell: bash
+      run: npx tsx generator/models.ts
+
+    - name: Generate types and validation code
+      shell: bash
+      run: npx tsx generator/types.ts
+
+    - name: Make sure TypeScript compiles
+      shell: bash
+      run: npx tsc
+
+    - name: Run tests
+      shell: bash
+      run: npm test
+
+    - name: Check model data
+      shell: bash
+      run: npx tsx models/check-model-rules.ts
+
+    - name: Check source code with eslint
+      shell: bash
+      run: npx eslint ./
