@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LWM2M xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://openmobilealliance.org/tech/profiles/LWM2M-v1_1.xsd">
+  <Object ObjectType="MODefinition">
+    <Name>DECT NR+ Connection Profile</Name>
+    <Description1><![CDATA[Connection details of a device connected to a DECT NR+ network.]]></Description1>
+    <ObjectID>14503</ObjectID>
+    <ObjectURN>urn:oma:lwm2m:x:14503</ObjectURN>
+    <MultipleInstances>Multiple</MultipleInstances>
+    <Mandatory>Optional</Mandatory>
+    <Resources>
+      <Item ID="0">
+        <Name>Long RD ID</Name>
+        <Operations>R</Operations>
+        <MultipleInstances>Single</MultipleInstances>
+        <Mandatory>Mandatory</Mandatory>
+        <Type>Integer</Type>
+        <RangeEnumeration>1..4294967293</RangeEnumeration>
+        <Units/>
+        <Description><![CDATA[This identifier uniquely identifies this radio device in the DECT NR+ network. Examples: 1523, 862.]]></Description>
+      </Item>
+      <Item ID="1">
+        <Name>Network ID</Name>
+        <Operations>R</Operations>
+        <MultipleInstances>Single</MultipleInstances>
+        <Mandatory>Mandatory</Mandatory>
+        <Type>Integer</Type>
+        <RangeEnumeration>1..4294967293</RangeEnumeration>
+        <Units/>
+        <Description><![CDATA[This identifier uniquely identifies the DECT NR+ network that this radio device is in. Examples: 734, 16654.]]></Description>
+      </Item>
+      <Item ID="2">
+        <Name>Operational Mode</Name>
+        <Operations>R</Operations>
+        <MultipleInstances>Single</MultipleInstances>
+        <Mandatory>Mandatory</Mandatory>
+        <Type>String</Type>
+        <RangeEnumeration/>
+        <Units/>
+        <Description><![CDATA[Operational mode of this radio device. Examples: FT, PT.]]></Description>
+      </Item>
+      <Item ID="99">
+        <Name>Timestamp</Name>
+        <Operations>R</Operations>
+        <MultipleInstances>Single</MultipleInstances>
+        <Mandatory>Mandatory</Mandatory>
+        <Type>Time</Type>
+        <RangeEnumeration/>
+        <Units/>
+        <Description><![CDATA[The timestamp of when the DECT NR+ connection profile was last reported.]]></Description>
+      </Item>
+    </Resources>
+    <Description2/>
+  </Object>
+</LWM2M>
