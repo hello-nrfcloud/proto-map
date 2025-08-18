@@ -5,7 +5,7 @@ import { shadowToObjects } from './shadowToObjects.js'
 
 void describe('shadowToObjects()', () => {
 	void it('should convert a shadow to LwM2M objects', () =>
-		assert.deepEqual(
+		assert.deepStrictEqual(
 			shadowToObjects({
 				'14205:1.0': {
 					0: {

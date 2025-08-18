@@ -1,4 +1,4 @@
-import assert from 'node:assert'
+import assert from 'node:assert/strict'
 import { describe, it } from 'node:test'
 import { validate } from './validate.js'
 import { validators } from './validators.js'
@@ -18,7 +18,7 @@ void describe('validate()', () => {
 			},
 		}
 		const maybeValid = v(object)
-		assert.deepEqual('object' in maybeValid && maybeValid.object, object)
+		assert.deepStrictEqual('object' in maybeValid && maybeValid.object, object)
 	})
 
 	void it('should return an error for an invalid object', () => {
@@ -42,7 +42,7 @@ void describe('validate()', () => {
 			},
 		}
 		const maybeValid = v(object)
-		assert.deepEqual('object' in maybeValid && maybeValid.object, object)
+		assert.deepStrictEqual('object' in maybeValid && maybeValid.object, object)
 	})
 
 	void it('should validate an object with multiple instance resource', () => {
@@ -55,6 +55,6 @@ void describe('validate()', () => {
 			},
 		}
 		const maybeValid = v(object)
-		assert.deepEqual('object' in maybeValid && maybeValid.object, object)
+		assert.deepStrictEqual('object' in maybeValid && maybeValid.object, object)
 	})
 })

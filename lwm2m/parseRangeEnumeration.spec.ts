@@ -6,7 +6,7 @@ import { parseRangeEnumeration } from './parseRangeEnumeration.js'
 void describe('parseRangeEnumeration()', () => {
 	void it('should parse valid range enumeration', () => {
 		const result = parseRangeEnumeration('1..10')
-		assert.deepEqual(result, {
+		assert.deepStrictEqual(result, {
 			range: {
 				min: 1,
 				max: 10,
@@ -16,7 +16,7 @@ void describe('parseRangeEnumeration()', () => {
 
 	void it('should handle invalid range enumeration', () => {
 		const result = parseRangeEnumeration('10..1')
-		assert.deepEqual(result, {
+		assert.deepStrictEqual(result, {
 			error: new Error(
 				`'min' must be smaller than 'max' in RangeEnumeration '10..1'!`,
 			),
@@ -25,7 +25,7 @@ void describe('parseRangeEnumeration()', () => {
 
 	void it('should handle invalid input', () => {
 		const result = parseRangeEnumeration('invalid')
-		assert.deepEqual(result, {
+		assert.deepStrictEqual(result, {
 			error: new Error(
 				`Could not match 'invalid' against ${RangeEnumerationRegExp}!`,
 			),
