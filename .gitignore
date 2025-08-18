@@ -7,6 +7,3 @@ lwm2m/LwM2MObjectID.ts
 lwm2m/objects.ts
 lwm2m/definitions.ts
 lwm2m/object/*
-# Compiled JavaScript files
-**/*.js
-!compile.sh
