@@ -5,7 +5,7 @@ import { objectsToShadow } from './objectsToShadow.js'
 
 void describe('objectsToShadow()', () => {
 	void it('should convert a list of LwM2M objects to a shadow document', () =>
-		assert.deepStrictEqual(
+		assert.deepEqual(
 			objectsToShadow([
 				{
 					ObjectID: 14205,

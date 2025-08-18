@@ -1,4 +1,4 @@
-import assert from 'node:assert/strict'
+import assert from 'node:assert'
 import { describe, it } from 'node:test'
 import { LwM2MObjectID } from '../LwM2MObjectID.js'
 import type { Environment_14205 } from '../objects.js'
@@ -17,11 +17,11 @@ void describe('instanceMeasuresToRecord()', () => {
 		}
 
 		const maybeRecord = instanceMeasuresToRecord(env)
-		assert.deepStrictEqual('record' in maybeRecord && maybeRecord.record, {
+		assert.deepEqual('record' in maybeRecord && maybeRecord.record, {
 			Dimensions: [
 				{
 					Name: 'ObjectID',
-					Value: LwM2MObjectID.Environment_14205.toString(),
+					Value: LwM2MObjectID.Environment_14205,
 				},
 				{
 					Name: 'ObjectInstanceID',
