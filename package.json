@@ -98,6 +98,6 @@
   ],
   "peerDependencies": {
     "@aws-sdk/client-timestream-write": "^3.879.0",
-    "@sinclair/typebox": "^0.34.40"
+    "@sinclair/typebox": "^0.34.41"
   }
 }
