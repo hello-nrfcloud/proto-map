@@ -39,7 +39,7 @@
     "@bifravst/prettier-config": "1.1.17",
     "@commitlint/config-conventional": "19.8.1",
     "@swc/cli": "0.7.9",
-    "@swc/core": "1.15.7",
+    "@swc/core": "1.15.8",
     "@types/node": "22.19.3",
     "@types/xml2js": "0.4.14",
     "chalk": "5.6.2",
