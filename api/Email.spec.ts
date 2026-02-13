@@ -2,7 +2,7 @@ import assert from 'node:assert/strict'
 import { describe, it } from 'node:test'
 import { validate } from '../validate.js'
 import { Email } from './Email.js'
-import invalidEmails from './test/invalid-emails.json' assert { type: 'json' }
+import invalidEmails from './test/invalid-emails.json' with { type: 'json' }
 
 const v = validate(Email)
 
