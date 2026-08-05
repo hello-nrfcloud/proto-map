@@ -11,6 +11,9 @@ runs:
         node-version: "22.x"
         cache: "npm"
 
+    - name: Install NPM version specified in package.json
+      uses: ./.github/actions/install-npm
+
     - name: Install dependencies
       shell: bash
       run: npm ci --no-audit
