@@ -36,7 +36,7 @@
         <Type>Integer</Type>
         <RangeEnumeration/>
         <Units/>
-        <Description><![CDATA[The cell ID the User Equipment (UE) is camped on.]]></Description>
+        <Description><![CDATA[The cell ID at the time of report.]]></Description>
       </Item>
       <Item ID="3">
         <Name>Satellite Elevation</Name>
