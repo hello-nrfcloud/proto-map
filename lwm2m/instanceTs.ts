@@ -1,6 +1,6 @@
-import type { LwM2MObjectInstance } from './LwM2MObjectInstance.js'
-import { definitions } from './definitions.js'
-import { timestampResources } from './timestampResources.js'
+import type { LwM2MObjectInstance } from './LwM2MObjectInstance.ts'
+import { definitions } from './definitions.ts'
+import { timestampResources } from './timestampResources.ts'
 
 /**
  * Returns the timestamp of the instance

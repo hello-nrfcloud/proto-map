@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import { describe, it } from 'node:test'
-import { fromCBOR } from './fromCBOR.js'
-import { toCBOR } from './toCBOR.js'
+import { fromCBOR } from './fromCBOR.ts'
+import { toCBOR } from './toCBOR.ts'
 
 void describe('toCBOR()', () => {
 	void it('should convert JSON encoding to CBOR encoding', () =>

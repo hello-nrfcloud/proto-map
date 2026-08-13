@@ -102,15 +102,15 @@ npm test
 ## Update generated code
 
 ```bash
-npx tsx generator/lwm2m.ts
-npx tsx generator/models.ts
-npx tsx generator/types.ts
+node --experimental-transform-types --no-warnings generator/lwm2m.ts
+node --experimental-transform-types --no-warnings generator/models.ts
+node --experimental-transform-types --no-warnings generator/types.ts
 ```
 
 ## Node & NPM
 
-This project requires Node.js `>=20.0.0` and npm `>=12.0.2 <13` (enforced via
-`check-node-version` on `npm install` and `npm ci`).
+This project requires Node.js `>=24.19.0 <25` and npm `>=12.0.2 <13` (enforced
+via `check-node-version` on `npm install` and `npm ci`).
 
 The check is skipped during `npm publish` and `npm pack`, because
 `semantic-release` bundles its own npm (`@semantic-release/npm` depends on

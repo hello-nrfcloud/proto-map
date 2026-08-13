@@ -3,12 +3,12 @@ import { readFile, readdir, writeFile } from 'node:fs/promises'
 import os from 'node:os'
 import path from 'node:path'
 import xml2js from 'xml2js'
-import type { ParsedLwM2MObjectDefinition } from '../lwm2m/ParsedLwM2MObjectDefinition.js'
-import { unwrapNestedArray } from '../lwm2m/unwrapNestedArray.js'
-import { generateLwM2MDefinitions } from './generateLwM2MDefinitions.js'
-import { generateLwm2mTimestampResources } from './generateLwm2mTimestampResources.js'
-import { generateName } from './generateType.js'
-import { printNode } from './printNode.js'
+import type { ParsedLwM2MObjectDefinition } from '../lwm2m/ParsedLwM2MObjectDefinition.ts'
+import { unwrapNestedArray } from '../lwm2m/unwrapNestedArray.ts'
+import { generateLwM2MDefinitions } from './generateLwM2MDefinitions.ts'
+import { generateLwm2mTimestampResources } from './generateLwm2mTimestampResources.ts'
+import { generateName } from './generateType.ts'
+import { printNode } from './printNode.ts'
 
 const baseDir = process.cwd()
 const subDir = (...tree: string[]): string => path.join(baseDir, ...tree)

@@ -1,6 +1,6 @@
 import assert from 'node:assert'
 import { describe, it } from 'node:test'
-import { parseResourceId } from './parseResourceId.js'
+import { parseResourceId } from './parseResourceId.ts'
 
 void describe('parseResourceId()', () => {
 	void it('should parse an LwM2M resource ID', () =>

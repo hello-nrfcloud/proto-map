@@ -4,14 +4,14 @@ import { exec } from 'node:child_process'
 import { readFile, readdir, stat } from 'node:fs/promises'
 import path, { parse } from 'node:path'
 import xml2js from 'xml2js'
-import { validate } from '../validate.js'
+import { validate } from '../validate.ts'
 import {
 	LWM2MObjectDefinition,
 	type LWM2MObjectDefinitionType,
-} from './LWM2MObjectDefinition.js'
-import type { ParsedLwM2MObjectDefinition } from './ParsedLwM2MObjectDefinition.js'
-import { parseRangeEnumeration } from './parseRangeEnumeration.js'
-import { unwrapNestedArray } from './unwrapNestedArray.js'
+} from './LWM2MObjectDefinition.ts'
+import type { ParsedLwM2MObjectDefinition } from './ParsedLwM2MObjectDefinition.ts'
+import { parseRangeEnumeration } from './parseRangeEnumeration.ts'
+import { unwrapNestedArray } from './unwrapNestedArray.ts'
 
 const v = validate(LWM2MObjectDefinition)
 

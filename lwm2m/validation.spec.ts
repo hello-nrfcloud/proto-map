@@ -4,7 +4,7 @@ import {
 	MultipleInstanceResource,
 	OptionalResource,
 	StringResource,
-} from './validation.js'
+} from './validation.ts'
 
 void describe('MultipleInstanceResource()', () => {
 	void it('should validate a multiple instance resource', () => {

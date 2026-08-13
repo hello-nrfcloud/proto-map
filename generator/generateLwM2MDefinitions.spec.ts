@@ -1,8 +1,8 @@
 import assert from 'node:assert/strict'
 import { describe, it } from 'node:test'
-import { definitions } from '../lwm2m/definitions.js'
-import { LwM2MObjectID } from '../lwm2m/LwM2MObjectID.js'
-import { ResourceType } from '../lwm2m/LWM2MObjectInfo.js'
+import { definitions } from '../lwm2m/definitions.ts'
+import { LwM2MObjectID } from '../lwm2m/LwM2MObjectID.ts'
+import { ResourceType } from '../lwm2m/LWM2MObjectInfo.ts'
 
 void describe('generateLwM2MDefinitions()', () => {
 	void it('should have generated definitions from the XML files', () => {

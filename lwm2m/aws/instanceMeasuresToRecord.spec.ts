@@ -1,9 +1,9 @@
 import assert from 'node:assert/strict'
 import { describe, it } from 'node:test'
-import { InvalidTimeError } from '../InvalidTimeError.js'
-import { LwM2MObjectID } from '../LwM2MObjectID.js'
-import { instanceMeasuresToRecord } from './instanceMeasuresToRecord.js'
-import { NoHistoryMeasuresError } from './NoHistoryMeasuresError.js'
+import { InvalidTimeError } from '../InvalidTimeError.ts'
+import { LwM2MObjectID } from '../LwM2MObjectID.ts'
+import { instanceMeasuresToRecord } from './instanceMeasuresToRecord.ts'
+import { NoHistoryMeasuresError } from './NoHistoryMeasuresError.ts'
 
 void describe('instanceMeasuresToRecord()', () => {
 	void it('should return an error if no measures are found', () => {

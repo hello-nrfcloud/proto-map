@@ -1,5 +1,5 @@
-import { SenML } from '../senml/SenMLSchema.js'
-import { validate } from '../validate.js'
+import { SenML } from '../senml/SenMLSchema.ts'
+import { validate } from '../validate.ts'
 
 const validator = validate(SenML)
 

@@ -1,6 +1,6 @@
 import { Type } from '@sinclair/typebox'
-import { Context } from './Context.js'
-import { DeviceId, PublicDeviceId } from './DeviceId.js'
+import { Context } from './Context.ts'
+import { DeviceId, PublicDeviceId } from './DeviceId.ts'
 
 export const DeviceCredentials = Type.Object(
 	{

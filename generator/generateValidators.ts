@@ -1,12 +1,12 @@
 import ts from 'typescript'
-import type { ParsedLwM2MObjectDefinition } from '../lwm2m/ParsedLwM2MObjectDefinition.js'
-import { addDocBlock } from './addDocBlock.js'
-import { generateName } from './generateType.js'
+import type { ParsedLwM2MObjectDefinition } from '../lwm2m/ParsedLwM2MObjectDefinition.ts'
+import { addDocBlock } from './addDocBlock.ts'
+import { generateName } from './generateType.ts'
 
 export const generateValidators = (
 	objects: ParsedLwM2MObjectDefinition[],
 ): ts.Node[] => {
-	// import { LwM2MObjectID } from './LwM2MObjectID.js'
+	// import { LwM2MObjectID } from './LwM2MObjectID.ts'
 	const importLwM2MObjectID = ts.factory.createImportDeclaration(
 		undefined,
 		ts.factory.createImportClause(
@@ -20,7 +20,7 @@ export const generateValidators = (
 				),
 			]),
 		),
-		ts.factory.createStringLiteral('./LwM2MObjectID.js'),
+		ts.factory.createStringLiteral('./LwM2MObjectID.ts'),
 	)
 	// import type { LwM2MObjectInstance } from "./LwM2MObjectInstance.js";
 	const importLwM2MObjectInstance = ts.factory.createImportDeclaration(
@@ -36,7 +36,7 @@ export const generateValidators = (
 				),
 			]),
 		),
-		ts.factory.createStringLiteral('./LwM2MObjectInstance.js'),
+		ts.factory.createStringLiteral('./LwM2MObjectInstance.ts'),
 	)
 
 	const validatorImports: ts.Node[] = objects.map((object) =>
@@ -53,7 +53,7 @@ export const generateValidators = (
 					),
 				]),
 			),
-			ts.factory.createStringLiteral(`./object/validate${object.ObjectID}.js`),
+			ts.factory.createStringLiteral(`./object/validate${object.ObjectID}.ts`),
 		),
 	)
 

@@ -1,5 +1,5 @@
-import { LwM2MObjectIDs, type LwM2MObjectID } from './LwM2MObjectID.js'
-import type { LwM2MObjectInstance } from './LwM2MObjectInstance.js'
+import { LwM2MObjectIDs, type LwM2MObjectID } from './LwM2MObjectID.ts'
+import type { LwM2MObjectInstance } from './LwM2MObjectInstance.ts'
 
 export const isLwM2MObject = (
 	object: unknown,

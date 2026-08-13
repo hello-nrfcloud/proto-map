@@ -17,14 +17,14 @@
     "noEmit": true,
     "verbatimModuleSyntax": true,
     "skipLibCheck": true,
-    "baseUrl": ".",
+    "allowImportingTsExtensions": true,
     "paths": {
-      "@hello.nrfcloud.com/proto-map/generator": ["generator/index.d.ts"],
-      "@hello.nrfcloud.com/proto-map/lwm2m": ["lwm2m/index.d.ts"],
-      "@hello.nrfcloud.com/proto-map/lwm2m/aws": ["lwm2m/aws/index.d.ts"],
-      "@hello.nrfcloud.com/proto-map/markdown": ["markdown/index.d.ts"],
-      "@hello.nrfcloud.com/proto-map/models": ["models/index.d.ts"],
-      "@hello.nrfcloud.com/proto-map/senml": ["senml/index.d.ts"]
+      "@hello.nrfcloud.com/proto-map/generator": ["./generator/index.d.ts"],
+      "@hello.nrfcloud.com/proto-map/lwm2m": ["./lwm2m/index.d.ts"],
+      "@hello.nrfcloud.com/proto-map/lwm2m/aws": ["./lwm2m/aws/index.d.ts"],
+      "@hello.nrfcloud.com/proto-map/markdown": ["./markdown/index.d.ts"],
+      "@hello.nrfcloud.com/proto-map/models": ["./models/index.d.ts"],
+      "@hello.nrfcloud.com/proto-map/senml": ["./senml/index.d.ts"]
     }
   }
 }

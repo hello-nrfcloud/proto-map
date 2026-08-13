@@ -1,4 +1,4 @@
-import { isNumber } from './isNumber.js'
+import { isNumber } from './isNumber.ts'
 
 export const isUnixTimeInSeconds = (value: unknown): value is number => {
 	if (!isNumber(value)) return false

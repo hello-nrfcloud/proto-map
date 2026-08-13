@@ -1,4 +1,4 @@
-import { ResourceType } from './LWM2MObjectInfo.js'
+import { ResourceType } from './LWM2MObjectInfo.ts'
 
 /**
  * Only store numeric values, because you cannot create statistics about strings, or boolean

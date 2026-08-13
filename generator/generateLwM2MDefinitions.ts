@@ -1,12 +1,12 @@
 import ts, { type ObjectLiteralElementLike } from 'typescript'
-import type { Range } from '../lwm2m/LWM2MObjectInfo.js'
+import type { Range } from '../lwm2m/LWM2MObjectInfo.ts'
 import type {
 	ParsedLwM2MObjectDefinition,
 	Resource,
-} from '../lwm2m/ParsedLwM2MObjectDefinition.js'
-import { parseRangeEnumeration } from '../lwm2m/parseRangeEnumeration.js'
-import { addDocBlock } from './addDocBlock.js'
-import { generateName } from './generateType.js'
+} from '../lwm2m/ParsedLwM2MObjectDefinition.ts'
+import { parseRangeEnumeration } from '../lwm2m/parseRangeEnumeration.ts'
+import { addDocBlock } from './addDocBlock.ts'
+import { generateName } from './generateType.ts'
 
 export const generateLwM2MDefinitions = (
 	definitions: ParsedLwM2MObjectDefinition[],
@@ -29,7 +29,7 @@ export const generateLwM2MDefinitions = (
 				),
 			]),
 		),
-		ts.factory.createStringLiteral('./LWM2MObjectInfo.js'),
+		ts.factory.createStringLiteral('./LWM2MObjectInfo.ts'),
 	)
 	const importLwM2MObjectID = ts.factory.createImportDeclaration(
 		undefined,
@@ -44,7 +44,7 @@ export const generateLwM2MDefinitions = (
 				),
 			]),
 		),
-		ts.factory.createStringLiteral('./LwM2MObjectID.js'),
+		ts.factory.createStringLiteral('./LwM2MObjectID.ts'),
 	)
 
 	const type = ts.factory.createVariableStatement(

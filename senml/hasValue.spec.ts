@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict'
 import { describe, it } from 'node:test'
-import { hasValue } from './hasValue.js'
+import { hasValue } from './hasValue.ts'
 
 void describe('hasValue() should determine whether an object has a value', () => {
 	for (const [record, expected] of [

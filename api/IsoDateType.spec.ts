@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import { describe, test as it } from 'node:test'
-import { validate } from '../validate.js'
-import { IsoDateType } from './IsoDateType.js'
+import { validate } from '../validate.ts'
+import { IsoDateType } from './IsoDateType.ts'
 
 void describe('isoDateRegExp', () => {
 	void it('should match a date string', () => {

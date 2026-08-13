@@ -1,4 +1,4 @@
-import type { LwM2MObjectID } from './LwM2MObjectID.js'
+import type { LwM2MObjectID } from './LwM2MObjectID.ts'
 
 /**
  * Provides information about the the LwM2M objects defined in this project.

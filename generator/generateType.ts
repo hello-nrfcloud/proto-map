@@ -1,12 +1,12 @@
-import { parseRangeEnumeration } from 'lwm2m/parseRangeEnumeration.js'
 import ts from 'typescript'
 import type {
 	ParsedLwM2MObjectDefinition,
 	Resource,
-} from '../lwm2m/ParsedLwM2MObjectDefinition.js'
-import { LwM2MType } from '../lwm2m/resourceType.js'
-import { addDocBlock } from './addDocBlock.js'
-import { tokenizeName } from './tokenizeName.js'
+} from '../lwm2m/ParsedLwM2MObjectDefinition.ts'
+import { parseRangeEnumeration } from '../lwm2m/parseRangeEnumeration.ts'
+import { LwM2MType } from '../lwm2m/resourceType.ts'
+import { addDocBlock } from './addDocBlock.ts'
+import { tokenizeName } from './tokenizeName.ts'
 
 export const generateType = ({
 	ObjectID,
@@ -30,7 +30,7 @@ export const generateType = ({
 				),
 			]),
 		),
-		ts.factory.createStringLiteral('../LwM2MObject.js'),
+		ts.factory.createStringLiteral('../LwM2MObject.ts'),
 	)
 	const importLwM2MObjectID = ts.factory.createImportDeclaration(
 		undefined,
@@ -45,7 +45,7 @@ export const generateType = ({
 				),
 			]),
 		),
-		ts.factory.createStringLiteral('../LwM2MObjectID.js'),
+		ts.factory.createStringLiteral('../LwM2MObjectID.ts'),
 	)
 
 	// Generate the type

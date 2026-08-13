@@ -1,8 +1,8 @@
 import assert from 'node:assert'
 import { describe, it } from 'node:test'
-import { LwM2MObjectID } from '../LwM2MObjectID.js'
-import type { Environment_14205 } from '../objects.js'
-import { instanceMeasuresToRecord } from './instanceMeasuresToRecord.js'
+import { LwM2MObjectID } from '../LwM2MObjectID.ts'
+import type { Environment_14205 } from '../objects.ts'
+import { instanceMeasuresToRecord } from './instanceMeasuresToRecord.ts'
 
 void describe('instanceMeasuresToRecord()', () => {
 	void it('should convert LwM2M object instance to Timestream records', () => {

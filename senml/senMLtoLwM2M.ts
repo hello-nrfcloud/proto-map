@@ -1,9 +1,9 @@
-import type { LwM2MObjectInstance } from '../lwm2m/LwM2MObjectInstance.js'
-import { timestampResources } from '../lwm2m/timestampResources.js'
-import { hasName } from './hasName.js'
-import { hasValue } from './hasValue.js'
-import { parseResourceId, type ResourceID } from './parseResourceId.js'
-import type { MeasurementType, SenMLType } from './SenMLSchema.js'
+import type { LwM2MObjectInstance } from '../lwm2m/LwM2MObjectInstance.ts'
+import { timestampResources } from '../lwm2m/timestampResources.ts'
+import { hasName } from './hasName.ts'
+import { hasValue } from './hasValue.ts'
+import { parseResourceId, type ResourceID } from './parseResourceId.ts'
+import type { MeasurementType, SenMLType } from './SenMLSchema.ts'
 
 const isInfoForDifferentInstance = (
 	currentObject: LwM2MObjectInstance,

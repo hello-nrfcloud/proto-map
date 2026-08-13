@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict'
 import { describe, it } from 'node:test'
-import { unwrapNestedArray } from './unwrapNestedArray.js'
+import { unwrapNestedArray } from './unwrapNestedArray.ts'
 
 void describe('unwrapNestedArray()', () => {
 	void it('should unwrap an array', () =>

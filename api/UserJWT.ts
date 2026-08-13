@@ -1,6 +1,6 @@
 import { Type } from '@sinclair/typebox'
-import { Context } from './Context.js'
-import { Email } from './Email.js'
+import { Context } from './Context.ts'
+import { Email } from './Email.ts'
 
 export const UserJWTPayload = Type.Object(
 	{

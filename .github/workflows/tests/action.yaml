@@ -8,7 +8,7 @@ runs:
 
     - uses: actions/setup-node@v4
       with:
-        node-version: "22.x"
+        node-version: ">=24.19.0 <25"
         cache: "npm"
 
     - name: Install NPM version specified in package.json
@@ -23,19 +23,19 @@ runs:
       run: |
         sudo apt-get update
         sudo apt-get install -y libxml2-utils
-        npx tsx lwm2m/check-lwm2m-rules.ts
+        node --experimental-transform-types --no-warnings lwm2m/check-lwm2m-rules.ts
 
     - name: Generate LwM2M code
       shell: bash
-      run: npx tsx generator/lwm2m.ts
+      run: node --experimental-transform-types --no-warnings generator/lwm2m.ts
 
     - name: Generate model code
       shell: bash
-      run: npx tsx generator/models.ts
+      run: node --experimental-transform-types --no-warnings generator/models.ts
 
     - name: Generate types and validation code
       shell: bash
-      run: npx tsx generator/types.ts
+      run: node --experimental-transform-types --no-warnings generator/types.ts
 
     - name: Make sure TypeScript compiles
       shell: bash
@@ -47,7 +47,9 @@ runs:
 
     - name: Check model data
       shell: bash
-      run: npx tsx models/check-model-rules.ts
+      run:
+        node --experimental-transform-types --no-warnings
+        models/check-model-rules.ts
 
     - name: Check source code with eslint
       shell: bash

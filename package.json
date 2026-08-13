@@ -26,31 +26,31 @@
   "author": "Nordic Semiconductor ASA | nordicsemi.no",
   "license": "BSD-3-Clause",
   "engines": {
-    "node": ">=20.0.0",
+    "node": ">=24.19.0 <25",
     "npm": ">=12.0.2 <13"
   },
   "scripts": {
     "prepare": "husky && case \"$npm_command\" in install|ci) check-node-version --package ;; esac",
-    "test": "npx globstar -- npx tsx --test --test-reporter spec \"!(node_modules)/**/*.spec.ts\"",
+    "test": "npx globstar -- node --experimental-transform-types --no-warnings --test --test-reporter spec \"!(node_modules)/**/*.spec.ts\"",
     "prepublishOnly": "./compile.sh"
   },
   "devDependencies": {
-    "@bifravst/eslint-config-typescript": "6.4.4",
+    "@bifravst/eslint-config-typescript": "7.0.33",
     "@bifravst/prettier-config": "1.1.17",
-    "@commitlint/config-conventional": "20.5.3",
+    "@commitlint/config-conventional": "21.2.2",
     "@swc/cli": "0.8.1",
     "@swc/core": "1.15.47",
-    "@types/node": "25.9.5",
+    "@types/node": "26.2.0",
     "@types/xml2js": "0.4.14",
-    "chalk": "5.6.2",
+    "@typescript/native": "npm:typescript@7.0.2",
+    "chalk": "6.0.0",
     "check-node-version": "4.2.1",
     "globstar": "1.0.0",
     "husky": "9.1.7",
-    "lint-staged": "16.4.0",
+    "lint-staged": "17.3.0",
     "remark": "15.0.1",
     "remark-frontmatter": "5.0.0",
-    "tsx": "4.23.11",
-    "typescript": "5.9.3",
+    "typescript": "npm:@typescript/typescript6@6.0.2",
     "xml2js": "0.6.2",
     "yaml": "2.9.0"
   },
@@ -99,6 +99,6 @@
   ],
   "peerDependencies": {
     "@aws-sdk/client-timestream-write": "^3.1057.0",
-    "@sinclair/typebox": "^0.34.49"
+    "@sinclair/typebox": "^0.34.52"
   }
 }

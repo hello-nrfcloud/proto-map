@@ -1,13 +1,13 @@
 import assert from 'node:assert/strict'
 import { describe, it } from 'node:test'
-import { LwM2MObjectID } from '../lwm2m/LwM2MObjectID.js'
-import type { LwM2MObjectInstance } from '../lwm2m/LwM2MObjectInstance.js'
+import { LwM2MObjectID } from '../lwm2m/LwM2MObjectID.ts'
+import type { LwM2MObjectInstance } from '../lwm2m/LwM2MObjectInstance.ts'
 import type {
 	Geolocation_14201,
 	SeaWaterLevel_14230,
-} from '../lwm2m/objects.js'
-import { lwm2mToSenML } from './lwm2mToSenML.js'
-import type { SenMLType } from './SenMLSchema.js'
+} from '../lwm2m/objects.ts'
+import { lwm2mToSenML } from './lwm2mToSenML.ts'
+import type { SenMLType } from './SenMLSchema.ts'
 
 void describe('lwm2mToSenML()', () => {
 	void it('should convert LwM2M to SenML', () => {

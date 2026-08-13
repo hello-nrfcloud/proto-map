@@ -1,5 +1,5 @@
-import type { LwM2MObjectInstance } from '../LwM2MObjectInstance.js'
-import { instanceTs } from '../instanceTs.js'
+import type { LwM2MObjectInstance } from '../LwM2MObjectInstance.ts'
+import { instanceTs } from '../instanceTs.ts'
 
 export type LwM2MShadow = Record<
 	string,

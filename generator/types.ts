@@ -3,15 +3,15 @@ import { mkdir, readFile, readdir, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 import ts from 'typescript'
 import xml2js from 'xml2js'
-import type { ParsedLwM2MObjectDefinition } from '../lwm2m/ParsedLwM2MObjectDefinition.js'
-import { unwrapNestedArray } from '../lwm2m/unwrapNestedArray.js'
+import type { ParsedLwM2MObjectDefinition } from '../lwm2m/ParsedLwM2MObjectDefinition.ts'
+import { unwrapNestedArray } from '../lwm2m/unwrapNestedArray.ts'
 
 import os from 'node:os'
-import { addDocBlock } from './addDocBlock.js'
-import { generateName, generateType } from './generateType.js'
-import { generateValidator } from './generateValidator.js'
-import { generateValidators } from './generateValidators.js'
-import { printNode } from './printNode.js'
+import { addDocBlock } from './addDocBlock.ts'
+import { generateName, generateType } from './generateType.ts'
+import { generateValidator } from './generateValidator.ts'
+import { generateValidators } from './generateValidators.ts'
+import { printNode } from './printNode.ts'
 
 const baseDir = process.cwd()
 const subDir = (...tree: string[]): string => path.join(baseDir, ...tree)
@@ -150,7 +150,7 @@ await writeFile(
 							ts.factory.createIdentifier(name),
 						),
 					]),
-					ts.factory.createStringLiteral(`./object/${ObjectID}.js`),
+					ts.factory.createStringLiteral(`./object/${ObjectID}.ts`),
 				),
 				ts.factory.createExportDeclaration(
 					[],
@@ -162,7 +162,7 @@ await writeFile(
 							ts.factory.createIdentifier(`validate${ObjectID}`),
 						),
 					]),
-					ts.factory.createStringLiteral(`./object/validate${ObjectID}.js`),
+					ts.factory.createStringLiteral(`./object/validate${ObjectID}.ts`),
 				),
 			]
 		})

@@ -1,5 +1,5 @@
 import { Type } from '@sinclair/typebox'
-import { Context } from './Context.js'
+import { Context } from './Context.ts'
 
 export const APIHealth = Type.Object(
 	{

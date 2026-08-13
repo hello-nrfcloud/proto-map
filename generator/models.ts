@@ -6,8 +6,8 @@ import chalk from 'chalk'
 import { readFile, readdir, stat, writeFile } from 'node:fs/promises'
 import os from 'node:os'
 import path from 'node:path'
-import { generateModels } from './generateModels.js'
-import { printNode } from './printNode.js'
+import { generateModels } from './generateModels.ts'
+import { printNode } from './printNode.ts'
 
 const baseDir = process.cwd()
 const subDir = (...tree: string[]): string => path.join(baseDir, ...tree)

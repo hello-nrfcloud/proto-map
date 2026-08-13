@@ -1,9 +1,9 @@
 import chalk from 'chalk'
-import { parseREADME } from 'markdown/parseREADME.js'
 import assert from 'node:assert/strict'
 import { readFile, readdir, stat } from 'node:fs/promises'
 import path from 'node:path'
-import { ModelIDRegExp } from './types.js'
+import { parseREADME } from '../markdown/parseREADME.ts'
+import { ModelIDRegExp } from './types.ts'
 
 console.log(chalk.gray('Models rules check'))
 console.log('')
@@ -30,7 +30,7 @@ for (const model of await readdir(modelsDir)) {
 		parseREADME(await readFile(path.join(modelDir, 'README.md'), 'utf-8'))
 	} catch (err) {
 		console.error(err)
-		throw new Error(`README is not valid for ${model}!`)
+		throw new Error(`README is not valid for ${model}!`, { cause: err })
 	}
 	console.log(chalk.green('✔'), chalk.gray(`README.md is valid`))
 }

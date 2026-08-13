@@ -2,9 +2,9 @@ import ts from 'typescript'
 import type {
 	ParsedLwM2MObjectDefinition,
 	Resource,
-} from '../lwm2m/ParsedLwM2MObjectDefinition.js'
-import { addDocBlock } from './addDocBlock.js'
-import { generateName } from './generateType.js'
+} from '../lwm2m/ParsedLwM2MObjectDefinition.ts'
+import { addDocBlock } from './addDocBlock.ts'
+import { generateName } from './generateType.ts'
 
 export const generateValidator = ({
 	ObjectID,
@@ -12,7 +12,7 @@ export const generateValidator = ({
 	Name,
 	Resources,
 }: ParsedLwM2MObjectDefinition): ts.Node[] => {
-	// import type { LwM2MObject } from './LwM2MObject.js'
+	// import type { LwM2MObject } from './LwM2MObject.ts'
 	const importLwM2MObject = ts.factory.createImportDeclaration(
 		undefined,
 		ts.factory.createImportClause(
@@ -26,7 +26,7 @@ export const generateValidator = ({
 				),
 			]),
 		),
-		ts.factory.createStringLiteral('../LwM2MObjectInstance.js'),
+		ts.factory.createStringLiteral('../LwM2MObjectInstance.ts'),
 	)
 	/*
     import {
@@ -35,7 +35,7 @@ export const generateValidator = ({
 		OptionalResource,
         StringResource,
         validate,
-    } from './validation.js'
+    } from './validation.ts'
     */
 	const importValidation = ts.factory.createImportDeclaration(
 		undefined,
@@ -53,9 +53,9 @@ export const generateValidator = ({
 				),
 			),
 		),
-		ts.factory.createStringLiteral('../validation.js'),
+		ts.factory.createStringLiteral('../validation.ts'),
 	)
-	// import type { Geolocation_14201 } from './objects.js'
+	// import type { Geolocation_14201 } from './objects.ts'
 	const name = generateName({ Name, ObjectID })
 	const importObjectType = ts.factory.createImportDeclaration(
 		undefined,
@@ -70,9 +70,9 @@ export const generateValidator = ({
 				),
 			]),
 		),
-		ts.factory.createStringLiteral('../objects.js'),
+		ts.factory.createStringLiteral('../objects.ts'),
 	)
-	// import { LwM2MObjectID } from './LwM2MObjectID.js'
+	// import { LwM2MObjectID } from './LwM2MObjectID.ts'
 	const importLwM2MObjectID = ts.factory.createImportDeclaration(
 		undefined,
 		ts.factory.createImportClause(
@@ -86,7 +86,7 @@ export const generateValidator = ({
 				),
 			]),
 		),
-		ts.factory.createStringLiteral('../LwM2MObjectID.js'),
+		ts.factory.createStringLiteral('../LwM2MObjectID.ts'),
 	)
 
 	// validate ...

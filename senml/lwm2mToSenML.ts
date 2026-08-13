@@ -1,12 +1,12 @@
-import { definitions } from '../lwm2m/definitions.js'
-import { instanceTs } from '../lwm2m/instanceTs.js'
-import { ResourceType, type LWM2MObjectInfo } from '../lwm2m/LWM2MObjectInfo.js'
+import { definitions } from '../lwm2m/definitions.ts'
+import { instanceTs } from '../lwm2m/instanceTs.ts'
+import { ResourceType, type LWM2MObjectInfo } from '../lwm2m/LWM2MObjectInfo.ts'
 import type {
 	LwM2MObjectInstance,
 	LwM2MResourceValue,
-} from '../lwm2m/LwM2MObjectInstance.js'
-import { timestampResources } from '../lwm2m/timestampResources.js'
-import type { SenMLType } from './SenMLSchema.js'
+} from '../lwm2m/LwM2MObjectInstance.ts'
+import { timestampResources } from '../lwm2m/timestampResources.ts'
+import type { SenMLType } from './SenMLSchema.ts'
 
 /**
  * Convert LwM2M Object Instances to senML
@@ -79,6 +79,7 @@ const toKey = (def: LWM2MObjectInfo, resourceId: number): string | null => {
 			return 'v'
 		case ResourceType.Opaque:
 			return 'vd'
+		case undefined:
 		default:
 			return null
 	}

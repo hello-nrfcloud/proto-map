@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import { describe, it } from 'node:test'
-import type { SenMLType } from './SenMLSchema.js'
-import { validateSenML } from './validateSenML.js'
+import type { SenMLType } from './SenMLSchema.ts'
+import { validateSenML } from './validateSenML.ts'
 
 void describe('validateSenML()', () => {
 	void it('should validate', () => {

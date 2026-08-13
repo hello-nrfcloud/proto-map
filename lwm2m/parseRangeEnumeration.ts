@@ -1,5 +1,5 @@
-import { RangeEnumerationRegExp } from './LWM2MObjectDefinition.js'
-import type { Range } from './LWM2MObjectInfo.js'
+import { RangeEnumerationRegExp } from './LWM2MObjectDefinition.ts'
+import type { Range } from './LWM2MObjectInfo.ts'
 
 export const parseRangeEnumeration = (
 	re: string,

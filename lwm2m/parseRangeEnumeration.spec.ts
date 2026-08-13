@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import { describe, it } from 'node:test'
-import { RangeEnumerationRegExp } from './LWM2MObjectDefinition.js'
-import { parseRangeEnumeration } from './parseRangeEnumeration.js'
+import { RangeEnumerationRegExp } from './LWM2MObjectDefinition.ts'
+import { parseRangeEnumeration } from './parseRangeEnumeration.ts'
 
 void describe('parseRangeEnumeration()', () => {
 	void it('should parse valid range enumeration', () => {

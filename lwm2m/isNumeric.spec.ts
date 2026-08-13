@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import { describe, it } from 'node:test'
-import { isNumeric } from './isNumeric.js'
-import { ResourceType } from './LWM2MObjectInfo.js'
+import { isNumeric } from './isNumeric.ts'
+import { ResourceType } from './LWM2MObjectInfo.ts'
 
 void describe('isNumeric', () => {
 	void it('should return true for numeric types', () => {

@@ -1,5 +1,5 @@
 import { Type } from '@sinclair/typebox'
-import { LwM2MObjectID } from '../lwm2m/LwM2MObjectID.js'
+import { LwM2MObjectID } from '../lwm2m/LwM2MObjectID.ts'
 
 export const ObjectVersion = Type.String({
 	pattern: '^[0-9]+.[0-9]+$',

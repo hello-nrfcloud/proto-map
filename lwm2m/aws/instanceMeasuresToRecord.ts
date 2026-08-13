@@ -3,10 +3,10 @@ import {
 	TimeUnit,
 	type _Record,
 } from '@aws-sdk/client-timestream-write'
-import { instanceTs } from '../instanceTs.js'
-import type { LwM2MObjectInstance } from '../LwM2MObjectInstance.js'
-import { instanceToMeasures } from './instanceToMeasures.js'
-import { NoHistoryMeasuresError } from './NoHistoryMeasuresError.js'
+import { instanceTs } from '../instanceTs.ts'
+import type { LwM2MObjectInstance } from '../LwM2MObjectInstance.ts'
+import { instanceToMeasures } from './instanceToMeasures.ts'
+import { NoHistoryMeasuresError } from './NoHistoryMeasuresError.ts'
 
 export const instanceMeasuresToRecord = ({
 	ObjectID,

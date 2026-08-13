@@ -1,5 +1,5 @@
 import ts from 'typescript'
-import { addDocBlock } from './addDocBlock.js'
+import { addDocBlock } from './addDocBlock.ts'
 
 export const generateLwm2mTimestampResources = (
 	timestampResources: Record<string, number>,
@@ -17,7 +17,7 @@ export const generateLwm2mTimestampResources = (
 				),
 			]),
 		),
-		ts.factory.createStringLiteral('./LwM2MObjectID.js'),
+		ts.factory.createStringLiteral('./LwM2MObjectID.ts'),
 	)
 
 	const type = ts.factory.createVariableStatement(

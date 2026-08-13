@@ -2,14 +2,14 @@ import {
 	MeasureValueType,
 	type MeasureValue,
 } from '@aws-sdk/client-timestream-write'
-import { correctOffset } from '../correctOffset.js'
-import { definitions } from '../definitions.js'
-import { InvalidTimeError } from '../InvalidTimeError.js'
-import { isNumber } from '../isNumber.js'
-import { isNumeric } from '../isNumeric.js'
-import { isUnixTimeInSeconds } from '../isUnixTimeInSeconds.js'
-import type { LwM2MObjectInstance } from '../LwM2MObjectInstance.js'
-import { timestampResources } from '../timestampResources.js'
+import { correctOffset } from '../correctOffset.ts'
+import { definitions } from '../definitions.ts'
+import { InvalidTimeError } from '../InvalidTimeError.ts'
+import { isNumber } from '../isNumber.ts'
+import { isNumeric } from '../isNumeric.ts'
+import { isUnixTimeInSeconds } from '../isUnixTimeInSeconds.ts'
+import type { LwM2MObjectInstance } from '../LwM2MObjectInstance.ts'
+import { timestampResources } from '../timestampResources.ts'
 
 export const instanceToMeasures = ({
 	Resources,

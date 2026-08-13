@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict'
 import { describe, it } from 'node:test'
-import { instanceTs, instanceTsAsDate } from './instanceTs.js'
+import { instanceTs, instanceTsAsDate } from './instanceTs.ts'
 
 void describe('instanceTs()', () => {
 	void it('should return the timestamp of the instance', () =>
