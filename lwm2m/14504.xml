@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LWM2M xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://openmobilealliance.org/tech/profiles/LWM2M-v1_1.xsd">
+  <Object ObjectType="MODefinition">
+    <Name>NTN Observation</Name>
+    <Description1><![CDATA[Observation details of an NTN satellite.]]></Description1>
+    <ObjectID>14504</ObjectID>
+    <ObjectURN>urn:oma:lwm2m:x:14504</ObjectURN>
+    <MultipleInstances>Multiple</MultipleInstances>
+    <Mandatory>Optional</Mandatory>
+    <Resources>
+      <Item ID="0">
+        <Name>Orbit</Name>
+        <Operations>R</Operations>
+        <MultipleInstances>Single</MultipleInstances>
+        <Mandatory>Optional</Mandatory>
+        <Type>String</Type>
+        <RangeEnumeration/>
+        <Units/>
+        <Description><![CDATA[Examples: LEO, MEO, GEO.]]></Description>
+      </Item>
+      <Item ID="1">
+        <Name>Constellation</Name>
+        <Operations>R</Operations>
+        <MultipleInstances>Single</MultipleInstances>
+        <Mandatory>Optional</Mandatory>
+        <Type>String</Type>
+        <RangeEnumeration/>
+        <Units/>
+        <Description><![CDATA[The constellation the NTN satellite belongs to. Examples: Sateliot.]]></Description>
+      </Item>
+      <Item ID="2">
+        <Name>Cell</Name>
+        <Operations>R</Operations>
+        <MultipleInstances>Single</MultipleInstances>
+        <Mandatory>Optional</Mandatory>
+        <Type>Integer</Type>
+        <RangeEnumeration/>
+        <Units/>
+        <Description><![CDATA[The cell ID the User Equipment (UE) is camped on.]]></Description>
+      </Item>
+      <Item ID="3">
+        <Name>Satellite Elevation</Name>
+        <Operations>R</Operations>
+        <MultipleInstances>Single</MultipleInstances>
+        <Mandatory>Optional</Mandatory>
+        <Type>Float</Type>
+        <RangeEnumeration>0..90</RangeEnumeration>
+        <Units/>
+        <Description><![CDATA[Satellite elevation at the time of report (0=horizontal, 90=vertical).]]></Description>
+      </Item>
+      <Item ID="4">
+        <Name>RSRP</Name>
+        <Operations>R</Operations>
+        <MultipleInstances>Single</MultipleInstances>
+        <Mandatory>Optional</Mandatory>
+        <Type>Integer</Type>
+        <RangeEnumeration>-160..-40</RangeEnumeration>
+        <Units>dBm</Units>
+        <Description><![CDATA[Reference Signal Received Power (RSRP). Examples: -97, -104.]]></Description>
+      </Item>
+      <Item ID="5">
+        <Name>Time to attach</Name>
+        <Operations>R</Operations>
+        <MultipleInstances>Single</MultipleInstances>
+        <Mandatory>Optional</Mandatory>
+        <Type>Integer</Type>
+        <RangeEnumeration/>
+        <Units/>
+        <Description><![CDATA[Time to attach in seconds. Examples: 30, 45.]]></Description>
+      </Item>
+      <Item ID="99">
+        <Name>Timestamp</Name>
+        <Operations>R</Operations>
+        <MultipleInstances>Single</MultipleInstances>
+        <Mandatory>Mandatory</Mandatory>
+        <Type>Time</Type>
+        <RangeEnumeration/>
+        <Units/>
+        <Description><![CDATA[The timestamp of when the NTN observation was last reported.]]></Description>
+      </Item>
+    </Resources>
+    <Description2/>
+  </Object>
+</LWM2M>
