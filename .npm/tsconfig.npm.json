@@ -1,0 +1,16 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "emitDeclarationOnly": true,
+    "declaration": true,
+    "noEmit": false
+  },
+  "include": [
+    "../generator",
+    "../lwm2m",
+    "../markdown",
+    "../models",
+    "../senml",
+    "../api"
+  ]
+}

@@ -31,8 +31,9 @@
   },
   "scripts": {
     "prepare": "husky && case \"$npm_command\" in install|ci) check-node-version --package ;; esac",
-    "test": "npx globstar -- node --experimental-transform-types --no-warnings --test --test-reporter spec \"!(node_modules)/**/*.spec.ts\"",
-    "prepublishOnly": "./compile.sh"
+    "test": "node --no-warnings --experimental-transform-types --test \"!(node_modules)/**/*.spec.ts\"",
+    "test:watch": "node --no-warnings --experimental-transform-types --test --watch \"!(node_modules)/**/*.spec.ts\"",
+    "prepublishOnly": "node --experimental-strip-types ./.npm/compile.ts"
   },
   "devDependencies": {
     "@bifravst/eslint-config-typescript": "7.0.34",
