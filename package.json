@@ -48,7 +48,7 @@
     "check-node-version": "4.2.1",
     "globstar": "1.0.0",
     "husky": "9.1.7",
-    "lint-staged": "17.3.0",
+    "lint-staged": "17.4.1",
     "remark": "15.0.1",
     "remark-frontmatter": "5.0.0",
     "typescript": "npm:@typescript/typescript6@6.0.2",
