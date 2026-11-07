@@ -38,6 +38,46 @@
         <Units/>
         <Description><![CDATA[Operational mode of this radio device. Examples: FT, PT.]]></Description>
       </Item>
+      <Item ID="3">
+        <Name>Global IPv6 Address</Name>
+        <Operations>R</Operations>
+        <MultipleInstances>Single</MultipleInstances>
+        <Mandatory>Optional</Mandatory>
+        <Type>String</Type>
+        <RangeEnumeration/>
+        <Units/>
+        <Description><![CDATA[Global IPv6 address of this device. Example: 2001:db8::1.]]></Description>
+      </Item>
+      <Item ID="4">
+        <Name>Link-local IPv6 Address</Name>
+        <Operations>R</Operations>
+        <MultipleInstances>Single</MultipleInstances>
+        <Mandatory>Optional</Mandatory>
+        <Type>String</Type>
+        <RangeEnumeration/>
+        <Units/>
+        <Description><![CDATA[Link-local IPv6 address of this device. Example: fe80::1.]]></Description>
+      </Item>
+      <Item ID="5">
+        <Name>Band</Name>
+        <Operations>R</Operations>
+        <MultipleInstances>Single</MultipleInstances>
+        <Mandatory>Optional</Mandatory>
+        <Type>Integer</Type>
+        <RangeEnumeration/>
+        <Units/>
+        <Description><![CDATA[DECT NR+ band number as defined by ETSI TS 103 636-2. Examples: 1, 2.]]></Description>
+      </Item>
+      <Item ID="6">
+        <Name>Channel</Name>
+        <Operations>R</Operations>
+        <MultipleInstances>Single</MultipleInstances>
+        <Mandatory>Optional</Mandatory>
+        <Type>Integer</Type>
+        <RangeEnumeration/>
+        <Units/>
+        <Description><![CDATA[DECT NR+ channel the device operates on, as defined by ETSI TS 103 636-2. Example: 1657.]]></Description>
+      </Item>
       <Item ID="99">
         <Name>Timestamp</Name>
         <Operations>R</Operations>
