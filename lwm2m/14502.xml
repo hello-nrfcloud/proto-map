@@ -28,6 +28,86 @@
         <Units>dBm</Units>
         <Description><![CDATA[Indicates the average value of the received signal strength indication from the neighbor device. Examples: -123, -98.]]></Description>
       </Item>
+      <Item ID="2">
+        <Name>Signal-to-Noise Ratio</Name>
+        <Operations>R</Operations>
+        <MultipleInstances>Single</MultipleInstances>
+        <Mandatory>Optional</Mandatory>
+        <Type>Integer</Type>
+        <RangeEnumeration>-128..127</RangeEnumeration>
+        <Units>dB</Units>
+        <Description><![CDATA[Signal-to-noise ratio of the link to the neighbor device. Examples: 12, -3.]]></Description>
+      </Item>
+      <Item ID="3">
+        <Name>Receive MCS</Name>
+        <Operations>R</Operations>
+        <MultipleInstances>Single</MultipleInstances>
+        <Mandatory>Optional</Mandatory>
+        <Type>Integer</Type>
+        <RangeEnumeration>0..255</RangeEnumeration>
+        <Units/>
+        <Description><![CDATA[Modulation and coding scheme index used by the neighbor device when transmitting to this device. Examples: 4, 9.]]></Description>
+      </Item>
+      <Item ID="4">
+        <Name>Transmit Power</Name>
+        <Operations>R</Operations>
+        <MultipleInstances>Single</MultipleInstances>
+        <Mandatory>Optional</Mandatory>
+        <Type>Integer</Type>
+        <RangeEnumeration>-128..127</RangeEnumeration>
+        <Units>dBm</Units>
+        <Description><![CDATA[Transmit power this device uses towards the neighbor device. Examples: 0, 23.]]></Description>
+      </Item>
+      <Item ID="5">
+        <Name>Transmit Attempts</Name>
+        <Operations>R</Operations>
+        <MultipleInstances>Single</MultipleInstances>
+        <Mandatory>Optional</Mandatory>
+        <Type>Integer</Type>
+        <RangeEnumeration>0..65535</RangeEnumeration>
+        <Units/>
+        <Description><![CDATA[Number of transmission attempts to the neighbor device, counted in the radio modem's statistics window. Examples: 156, 423.]]></Description>
+      </Item>
+      <Item ID="6">
+        <Name>HARQ NACKs</Name>
+        <Operations>R</Operations>
+        <MultipleInstances>Single</MultipleInstances>
+        <Mandatory>Optional</Mandatory>
+        <Type>Integer</Type>
+        <RangeEnumeration>0..65535</RangeEnumeration>
+        <Units/>
+        <Description><![CDATA[Number of negative HARQ acknowledgements received from the neighbor device. Examples: 0, 17.]]></Description>
+      </Item>
+      <Item ID="7">
+        <Name>Missed Beacons</Name>
+        <Operations>R</Operations>
+        <MultipleInstances>Single</MultipleInstances>
+        <Mandatory>Optional</Mandatory>
+        <Type>Integer</Type>
+        <RangeEnumeration>0..255</RangeEnumeration>
+        <Units/>
+        <Description><![CDATA[Number of consecutive cluster beacons missed from the neighbor device. Examples: 0, 3.]]></Description>
+      </Item>
+      <Item ID="8">
+        <Name>Last Seen</Name>
+        <Operations>R</Operations>
+        <MultipleInstances>Single</MultipleInstances>
+        <Mandatory>Optional</Mandatory>
+        <Type>Integer</Type>
+        <RangeEnumeration>0..65535</RangeEnumeration>
+        <Units>s</Units>
+        <Description><![CDATA[Seconds since the last reception from the neighbor device. Saturates at 65535. Examples: 2, 120.]]></Description>
+      </Item>
+      <Item ID="9">
+        <Name>Neighbor Transmit Power</Name>
+        <Operations>R</Operations>
+        <MultipleInstances>Single</MultipleInstances>
+        <Mandatory>Optional</Mandatory>
+        <Type>Integer</Type>
+        <RangeEnumeration>-128..127</RangeEnumeration>
+        <Units>dBm</Units>
+        <Description><![CDATA[Transmit power the neighbor device uses when transmitting to this device. Examples: 0, 23.]]></Description>
+      </Item>
       <Item ID="99">
         <Name>Timestamp</Name>
         <Operations>R</Operations>
