@@ -8,6 +8,7 @@ import { unwrapNestedArray } from '../lwm2m/unwrapNestedArray.ts'
 
 import os from 'node:os'
 import { addDocBlock } from './addDocBlock.ts'
+import { createConstEnum } from './createConstEnum.ts'
 import { generateName, generateType } from './generateType.ts'
 import { generateValidator } from './generateValidator.ts'
 import { generateValidators } from './generateValidators.ts'
@@ -16,7 +17,7 @@ import { printNode } from './printNode.ts'
 const baseDir = process.cwd()
 const subDir = (...tree: string[]): string => path.join(baseDir, ...tree)
 
-const idMembers: ts.EnumMember[] = []
+const idMembers: ts.PropertyAssignment[] = []
 const objects: ParsedLwM2MObjectDefinition[] = []
 
 console.log(chalk.gray('Creating TypeBox definition for LwM2M objects'))
@@ -32,7 +33,7 @@ for (const objectDefinitionFile of (await readdir(subDir('lwm2m'))).filter(
 	).LWM2M.Object as ParsedLwM2MObjectDefinition
 	const ObjectID = parseInt(definition.ObjectID, 10)
 
-	const member = ts.factory.createEnumMember(
+	const member = ts.factory.createPropertyAssignment(
 		generateName(definition),
 		ts.factory.createNumericLiteral(ObjectID),
 	)
@@ -85,12 +86,9 @@ await writeFile(
 
 const idFile = subDir('lwm2m', `LwM2MObjectID.ts`)
 console.log(chalk.green('Writing'), chalk.blue(idFile.replace(baseDir, '')))
-const enumNode = ts.factory.createEnumDeclaration(
-	[ts.factory.createToken(ts.SyntaxKind.ExportKeyword)],
-	ts.factory.createIdentifier('LwM2MObjectID'),
-	idMembers,
-)
-addDocBlock(['The LwM2M Object IDs defined in this repo.'], enumNode)
+const [idObject, idType] = createConstEnum('LwM2MObjectID', idMembers)
+addDocBlock(['The LwM2M Object IDs defined in this repo.'], idObject)
+addDocBlock(['The LwM2M Object IDs defined in this repo.'], idType)
 
 const objectIdArray = ts.factory.createVariableStatement(
 	[ts.factory.createToken(ts.SyntaxKind.ExportKeyword)],
@@ -125,7 +123,7 @@ addDocBlock(['The LwM2M Object IDs defined in this repo.'], objectIdArray)
 
 await writeFile(
 	idFile,
-	[enumNode, objectIdArray].map(printNode).join(os.EOL),
+	[idObject, idType, objectIdArray].map(printNode).join(os.EOL),
 	'utf-8',
 )
 

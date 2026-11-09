@@ -1,3 +1,4 @@
+import { isLwM2MObjectID } from '../lwm2m/isLwM2MObjectID.ts'
 import type { LwM2MObjectInstance } from '../lwm2m/LwM2MObjectInstance.ts'
 import { timestampResources } from '../lwm2m/timestampResources.ts'
 import { hasName } from './hasName.ts'
@@ -57,11 +58,15 @@ export const senMLtoLwM2M = (
 			return { error: new Error(`Invalid resource ID: ${itemResourceId}`) }
 		}
 
-		const tsRes = timestampResources.get(resourceId.ObjectID)
+		const { ObjectID } = resourceId
+		if (!isLwM2MObjectID(ObjectID)) {
+			return { error: new Error(`Unknown LwM2M object: ${ObjectID}`) }
+		}
+		const tsRes = timestampResources.get(ObjectID)
 		if (tsRes === undefined) {
 			return {
 				error: new Error(
-					`No timestamp resource defined for object: ${resourceId.ObjectID}`,
+					`No timestamp resource defined for object: ${ObjectID}`,
 				),
 			}
 		}
@@ -85,7 +90,7 @@ export const senMLtoLwM2M = (
 				}
 			}
 			currentObject = {
-				ObjectID: resourceId.ObjectID,
+				ObjectID,
 				Resources: {
 					[tsRes]: currentBaseTime,
 				},
@@ -119,6 +124,7 @@ const parseTimestampOnly = (senML: SenMLType): LwM2MObjectInstance | null => {
 	if (Object.keys(rest).length !== 0) return null
 	const objectInfo = parseResourceId(`${bn}0/0`)
 	if (objectInfo === null) return null
+	if (!isLwM2MObjectID(objectInfo.ObjectID)) return null
 	const tsRes = timestampResources.get(objectInfo.ObjectID)
 	if (tsRes === undefined) return null
 	return {

@@ -59,9 +59,11 @@ export const generateType = ({
 					undefined,
 					ts.factory.createIdentifier('ObjectID'),
 					undefined,
-					ts.factory.createTypeReferenceNode(
-						`LwM2MObjectID.${name}`,
-						undefined,
+					ts.factory.createTypeQueryNode(
+						ts.factory.createQualifiedName(
+							ts.factory.createIdentifier('LwM2MObjectID'),
+							ts.factory.createIdentifier(name),
+						),
 					),
 				),
 				ts.factory.createPropertySignature(

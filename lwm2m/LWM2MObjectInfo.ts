@@ -33,11 +33,12 @@ export type Range = {
 	max: number
 }
 
-export enum ResourceType {
-	String = 'String',
-	Integer = 'Integer',
-	Float = 'Float',
-	Boolean = 'Boolean',
-	Opaque = 'Opaque',
-	Time = 'Time',
-}
+export const ResourceType = {
+	String: 'String',
+	Integer: 'Integer',
+	Float: 'Float',
+	Boolean: 'Boolean',
+	Opaque: 'Opaque',
+	Time: 'Time',
+} as const
+export type ResourceType = (typeof ResourceType)[keyof typeof ResourceType]

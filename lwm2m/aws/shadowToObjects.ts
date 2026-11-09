@@ -1,3 +1,4 @@
+import { isLwM2MObjectID } from '../isLwM2MObjectID.ts'
 import type { LwM2MObjectInstance } from '../LwM2MObjectInstance.ts'
 import { timestampResources } from '../timestampResources.ts'
 import type { LwM2MShadow } from './objectsToShadow.ts'
@@ -10,6 +11,7 @@ export const shadowToObjects = (shadow: LwM2MShadow): LwM2MObjectInstance[] =>
 				string,
 			]
 			const ObjectID = parseInt(ObjectIDString, 10)
+			if (!isLwM2MObjectID(ObjectID)) return null
 			const tsResource = timestampResources.get(ObjectID)
 			if (tsResource === undefined) return null
 			return Object.entries(Instances).map(([instanceId, Resources]) => {

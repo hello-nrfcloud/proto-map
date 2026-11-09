@@ -1,6 +1,7 @@
 import ts from 'typescript'
 import { parseREADME } from '../markdown/parseREADME.ts'
 import { addDocBlock } from './addDocBlock.ts'
+import { createConstEnum } from './createConstEnum.ts'
 import { tokenizeName } from './tokenizeName.ts'
 
 export const generateModels = (
@@ -12,19 +13,15 @@ export const generateModels = (
 	const types: ts.Node[] = []
 
 	types.push(
-		addDocBlock(
-			['The Model IDs defined in this repo.'],
-			ts.factory.createEnumDeclaration(
-				[ts.factory.createToken(ts.SyntaxKind.ExportKeyword)],
-				ts.factory.createIdentifier('ModelID'),
-				models.map(({ id }) =>
-					ts.factory.createEnumMember(
-						tokenizeName(id),
-						ts.factory.createStringLiteral(id),
-					),
+		...createConstEnum(
+			'ModelID',
+			models.map(({ id }) =>
+				ts.factory.createPropertyAssignment(
+					tokenizeName(id),
+					ts.factory.createStringLiteral(id),
 				),
 			),
-		),
+		).map((node) => addDocBlock(['The Model IDs defined in this repo.'], node)),
 	)
 
 	types.push(

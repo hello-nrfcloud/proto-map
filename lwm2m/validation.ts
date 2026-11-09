@@ -1,4 +1,5 @@
-import { LwM2MObjectIDs, type LwM2MObjectID } from './LwM2MObjectID.ts'
+import { isLwM2MObjectID } from './isLwM2MObjectID.ts'
+import type { LwM2MObjectID } from './LwM2MObjectID.ts'
 import type { LwM2MObjectInstance } from './LwM2MObjectInstance.ts'
 
 export const isLwM2MObject = (
@@ -14,7 +15,7 @@ export const isLwM2MObject = (
 		typeof object.ObjectID !== 'number' ||
 		object.ObjectID < 14200 ||
 		object.ObjectID > 15000 ||
-		LwM2MObjectIDs.includes(object.ObjectID) === false
+		!isLwM2MObjectID(object.ObjectID)
 	)
 		return error(
 			`Not an valid Object ID: ${JSON.stringify((object as any).ObjectID)}`,
