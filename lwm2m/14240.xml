@@ -38,6 +38,26 @@
         <Units/>
         <Description><![CDATA[The blue brightness level of the LED.]]></Description>
       </Item>
+      <Item ID="3">
+        <Name>Mode</Name>
+        <Operations>R</Operations>
+        <MultipleInstances>Single</MultipleInstances>
+        <Mandatory>Optional</Mandatory>
+        <Type>String</Type>
+        <RangeEnumeration/>
+        <Units/>
+        <Description><![CDATA[The effect the LED is currently showing. Examples: off, steady, blink, breathe, random_breathe, pulse, rainbow, fire.]]></Description>
+      </Item>
+      <Item ID="4">
+        <Name>Period</Name>
+        <Operations>R</Operations>
+        <MultipleInstances>Single</MultipleInstances>
+        <Mandatory>Optional</Mandatory>
+        <Type>Integer</Type>
+        <RangeEnumeration>0..65535</RangeEnumeration>
+        <Units>ms</Units>
+        <Description><![CDATA[Duration of one cycle of the current effect. 0 if the effect has no period (for example steady or fire). Examples: 0, 500, 2000.]]></Description>
+      </Item>
       <Item ID="99">
         <Name>Timestamp</Name>
         <Operations>R</Operations>
