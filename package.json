@@ -37,7 +37,7 @@
   },
   "devDependencies": {
     "@bifravst/eslint-config-typescript": "9.0.1",
-    "@bifravst/prettier-config": "2.0.5",
+    "@bifravst/prettier-config": "2.0.6",
     "@commitlint/config-conventional": "21.2.4",
     "@swc/cli": "0.8.2",
     "@swc/core": "1.16.22",
