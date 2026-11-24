@@ -102,9 +102,9 @@ npm test
 ## Update generated code
 
 ```bash
-node --experimental-transform-types --no-warnings generator/lwm2m.ts
-node --experimental-transform-types --no-warnings generator/models.ts
-node --experimental-transform-types --no-warnings generator/types.ts
+node --no-warnings generator/lwm2m.ts
+node --no-warnings generator/models.ts
+node --no-warnings generator/types.ts
 ```
 
 ## Node & NPM

@@ -31,8 +31,8 @@
   },
   "scripts": {
     "prepare": "husky && case \"$npm_command\" in install|ci) check-node-version --package ;; esac",
-    "test": "node --no-warnings --experimental-transform-types --test \"!(node_modules)/**/*.spec.ts\"",
-    "test:watch": "node --no-warnings --experimental-transform-types --test --watch \"!(node_modules)/**/*.spec.ts\"",
+    "test": "node --no-warnings --test \"!(node_modules)/**/*.spec.ts\"",
+    "test:watch": "node --no-warnings --test --watch \"!(node_modules)/**/*.spec.ts\"",
     "prepublishOnly": "node --experimental-strip-types ./.npm/compile.ts"
   },
   "devDependencies": {

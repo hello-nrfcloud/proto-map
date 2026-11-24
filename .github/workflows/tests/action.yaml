@@ -26,19 +26,19 @@ runs:
       run: |
         sudo apt-get update
         sudo apt-get install -y libxml2-utils
-        node --experimental-transform-types --no-warnings lwm2m/check-lwm2m-rules.ts
+        node --no-warnings lwm2m/check-lwm2m-rules.ts
 
     - name: Generate LwM2M code
       shell: bash
-      run: node --experimental-transform-types --no-warnings generator/lwm2m.ts
+      run: node --no-warnings generator/lwm2m.ts
 
     - name: Generate model code
       shell: bash
-      run: node --experimental-transform-types --no-warnings generator/models.ts
+      run: node --no-warnings generator/models.ts
 
     - name: Generate types and validation code
       shell: bash
-      run: node --experimental-transform-types --no-warnings generator/types.ts
+      run: node --no-warnings generator/types.ts
 
     - name: Make sure TypeScript compiles
       shell: bash
@@ -50,9 +50,7 @@ runs:
 
     - name: Check model data
       shell: bash
-      run:
-        node --experimental-transform-types --no-warnings
-        models/check-model-rules.ts
+      run: node --no-warnings models/check-model-rules.ts
 
     - name: Check source code with eslint
       shell: bash
