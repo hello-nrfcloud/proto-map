@@ -4,11 +4,39 @@ on:
   pull_request:
 
 jobs:
-  main:
+  tests-matrix:
     runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        # Must match engines.node in package.json
+        node-version:
+          - ">=24.19.0 <25"
+          - ">=26.13.1 <27"
 
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
       - name: Tests
         uses: ./.github/workflows/tests
+        with:
+          node-version: ${{ matrix.node-version }}
+
+  tests:
+    # Must match the required status check in the branch ruleset.
+    name: main
+
+    runs-on: ubuntu-latest
+
+    needs: [tests-matrix]
+
+    # Stable required status check for the branch ruleset, independent of
+    # the Node.js versions in the matrix.
+    if: ${{ always() }}
+
+    steps:
+      - name: All tests must have succeeded
+        env:
+          RESULT: ${{ needs.tests-matrix.result }}
+        run: test "$RESULT" = "success"
